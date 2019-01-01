@@ -1,0 +1,216 @@
+//package HOLIDAY;
+import java.awt.event.*;
+import java.applet.*;
+import java.awt.*;
+import java.util.*;
+public class   Filename  extends Applet implements Runnable
+{
+	Thread t;
+	int i,r=0,j=0,k=0,z=0,d=0,u=0,c=0;
+
+	 public void init()
+	 {
+
+		 setBackground(Color.BLACK);
+
+		 t=new Thread(this,"manoj");
+		 t.start();
+	 }
+	public void run()
+	{
+		try{
+			for(;;)
+			{
+				repaint();
+				i++;
+				Thread.sleep(20);
+			}
+		}
+		catch(Exception e )
+		{
+		}
+	}
+	public void paint(Graphics g)
+	{
+		g.setColor(Color.WHITE);
+		g.drawLine(0, 500, 1200, 500);
+		g.drawLine(1000, 500, 1000, 420);//right rod
+		g.setColor(Color.BLUE);
+		int x[]={1000,970,1030};
+		int y[]={450,470,470};
+		g.fillPolygon(x,y,3);  //gwon
+		g.setColor(Color.MAGENTA);
+		g.fillOval(975, 370, 50, 50);  //girl head
+		g.setColor(Color.BLACK);
+		g.fillOval(985, 385, 10, 10);//girl eye
+		if(i<=680)
+		{
+		g.setColor(Color.WHITE);
+		g.drawLine(200+i, 500, 200+i, 400);  //left rod
+		g.setColor(Color.GREEN);
+		g.drawLine(180+i, 470, 220+i, 470);  //flower rod
+		g.setColor(Color.YELLOW);
+		g.drawLine(200+i, 470,200+i,500); //boy leg      //boy moving towards girl
+		g.setColor(Color.MAGENTA);
+		g.fillOval(175+i, 360, 50, 50); //boy head
+		g.setColor(Color.BLACK);
+		g.fillOval(205+i, 375, 10, 10);//boy eye
+		g.setColor(Color.RED);
+		int p[]={220+i,240+i,230+i,240+i};
+		int q[]={470,460,470,480};
+		g.fillPolygon(p,q,4);
+		}
+		else if(i>680 && i<=720)
+		{
+			r++;
+			if(j<=20)
+			{
+				j++;
+			}
+			g.setColor(Color.WHITE);
+			g.drawLine(880, 500, 880, 400);  //left rod
+			g.setColor(Color.RED);
+			g.drawLine(880, 430, 880+j, 470-r); //boy hand
+			g.setColor(Color.GREEN);
+			g.drawLine(860+r, 470, 900, 470-r);  //flower rod
+			g.setColor(Color.YELLOW);
+			g.drawLine(880, 470,880,500); //boy leg
+			g.setColor(Color.MAGENTA);
+			g.fillOval(855, 360, 50, 50); //boy head
+			g.setColor(Color.BLACK);
+			g.fillOval(885, 375, 10, 10);//boy eye
+			g.setColor(Color.RED);
+			int p[]={900,920-r,910-r,920};
+			int q[]={470-r,460-r,470-r,480-r};
+			g.fillPolygon(p,q,4); //flower
+		}
+		else if(i>720  && i<=900)
+		{
+			if(k<=30)
+			{
+				k++;
+			}
+			g.setColor(Color.WHITE);
+			g.drawLine(880, 500, 880, 400);  //left rod
+			g.setColor(Color.GREEN);
+			g.drawLine(900+k, 470, 900+k, 430);  //flower rod
+			g.setColor(Color.YELLOW);
+			g.drawLine(880, 470,880,500); //boy leg
+			g.drawLine(880, 430, 900+k, 430);//boy hand
+			g.setColor(Color.MAGENTA);
+			g.fillOval(855, 360, 50, 50); //boy head
+			g.setColor(Color.BLACK);
+			g.fillOval(885, 375, 10, 10);//boy eye
+			g.setColor(Color.RED);
+			int p[]={900+k,880+k,900+k,920+k};
+			int q[]={430,410,420,410};
+			g.fillPolygon(p,q,4);   //flower
+			g.setColor(Color.BLUE);
+			g.fillRoundRect(850, 250, 150, 80,30,30);
+			String s="IM FEELING SO SAD FOR GIVING THIS LIFE LESS FLOWER";
+			g.setColor(Color.WHITE);
+			 g.drawString(s, 860, 270);
+		}
+		else if(i>900)
+		{
+			if(z<=39)
+			{
+				z++;
+			}
+			if(d<=20)
+			{
+				d++;
+
+			}
+			if(d==20)
+			{
+				u=50;
+			}
+			if(c<=400)
+			{
+				c++;
+				if(c==399)
+				{c=0;}
+			}
+			g.setColor(Color.WHITE);
+			g.drawLine(880, 500, 880, 400);  //left rod
+			g.fillOval(700, 60, 100, 100);  //moon
+			g.setColor(Color.GREEN);
+			g.drawLine(900+k, 470, 900+k, 430);  //flower rod
+			g.setColor(Color.YELLOW);
+			g.drawLine(880, 470,880,500); //boy leg
+			g.drawLine(1000, 430, 1000-d-u, 470-z);//girl hand
+			g.drawLine(880, 430, 900+k, 430);//boy hand
+			g.setColor(Color.MAGENTA);
+			g.fillOval(855, 360, 50, 50); //boy head
+			g.setColor(Color.BLACK);
+			g.fillOval(885, 375, 10, 10);//boy eye
+			g.setColor(Color.RED);
+			int p[]={900+k,880+k,900+k,920+k};
+			int q[]={430,410,420,410};
+			g.fillPolygon(p,q,4);   //flower
+			g.setColor(Color.BLUE);
+			g.fillRoundRect(850, 250, 450, 80,30,30);//box
+			g.setColor(Color.WHITE);
+			 if(i>900  && i<=1200) {
+				 String s="ITS A SMALL GIFT FROM MY SIDE";
+				 String h="I WANT TO CELEBRATE YOUR BIRTHDAY WITH U BUT IT IS NOT POSSIBLE FOR ME";
+
+				 g.drawString(s, 860, 280);
+				 g.drawString(h, 860, 300);
+			 }
+			 if(i>1200  && i<=1600)
+			 {
+				 String s="I DIDN'T UNDERSTAND  WHY ARE YOU IGNORING ME........";
+				 String h="I DONT BELEIVE U BUT I ONLY BELEIVE HOW MUCH LOVE PRESENT ON U!";
+				 g.drawString(s, 860, 280);
+				 g.drawString(h, 860, 300);
+			 }
+			 if(i>1600  && i<=2000)
+			 {
+				 String t="YOUR EYES R SO EXPRESSIVE AND ATTRACTIVE I CAN'T EXPLAIN THEM";
+				 g.drawString(t, 860, 280);
+			 }
+			 if(i>2000  && i<=2400)
+			 {
+				 String s="IF U DON'T LIKE IT THEN DELETE IT..";
+				 String h="I'M ONCE AGAIN SAYING THAT HAPPY BIRTHDAY VASAVI.";
+
+				 g.drawString(s, 860, 280);
+				 g.drawString(h, 860, 300);
+			 }
+			if(i>2400  )
+			 {
+				String m="TQ MANU";
+			    g.drawString(m, 860, 270);
+
+
+
+			 }
+			g.drawLine(1000, 430, 1000, 470);
+			g.fillOval(1200, 100+c, 5, 5);//star
+			g.fillOval(1000, 60+c,5, 5);//star
+			g.fillOval(1250, 140+c,5, 5);//star
+			g.fillOval(900, 80+c,5, 5);//star
+			g.fillOval(950, 150+c,5, 5);//star
+			g.fillOval(850, 200+c,5, 5);//star
+			g.fillOval(1050, 170+c,5, 5);//star
+			g.fillOval(750, 170+c,5, 5);//star
+			 setBackground(Color.BLACK);
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
